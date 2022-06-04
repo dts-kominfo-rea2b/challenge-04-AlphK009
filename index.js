@@ -8,11 +8,11 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (dates, index = 0 ) => {
+const createDate = (dates, index = -1 ) => {
   const createDates = dates.map(date => Date.parse(date)/1000);
   // const combineSecondDates = index === -1 ? createDates : createDates.splice(index, 1);
   const combineSecondDates = () => {
-    if (index === 0) {
+    if (index === -1) {
       return createDates.sort((a, b) => a - b).join("-");
     } else {
       return createDates.splice(index, 1).toString();
