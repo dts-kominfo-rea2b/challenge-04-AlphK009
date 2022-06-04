@@ -10,15 +10,15 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 const createDate = (dates, index = 0 ) => {
   const createDates = dates.map(date => Date.parse(date)/1000);
-  const combineSecondDates = index === 0 ? createDates : createDates.splice(index, 1);
-  // const combineSecondDates = () => {
-  //   if (index === 0) {
-  //     return createDates.sort((a, b) => a - b).join("-");
-  //   } else {
-  //     return createDates.splice(index, 1).toString();
-  //   }
-  // }
-  return combineSecondDates.sort((a, b) => a - b).join("-");
+  // const combineSecondDates = index === -1 ? createDates : createDates.splice(index, 1);
+  const combineSecondDates = () => {
+    if (index === 0) {
+      return createDates.sort((a, b) => a - b).join("-");
+    } else {
+      return createDates.splice(index, 1).toString();
+    }
+  }
+  return combineSecondDates();
 }
 
 // ! JANGAN DIMODIFIKASI
